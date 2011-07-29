@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+  </head>
+  <body>
+    <div id="account"></div>
+
+    <h1 id="site_header"><img src="images/icon.png" />Grocery List</h1>
+
+    <div id="profile">
+        <form id="create-message">
+          <input type="text" name="text" size="60" />
+        </form>
+        <div style="clear:left;"></div>
+    </div>
+    <div id="content"></div>
+
+    <div id="sidebar">
+      <h2>Remember the what?!</h2>
+      <p>When you remember it, add it here, and sync it with your CouchDB enabled phone.</p>
+    </div>
+  </body>
+  <script src="script/sha1.js"></script>
+  <script src="script/json2.js"></script>
+  <script src="script/jquery.js"></script>
+  <script src="script/jquery.couch.js"></script>  
+  <script src="vendor/couchapp/jquery.couchLogin.js"></script>
+  <script src="vendor/couchapp/jquery.couchProfile.js"></script>
+  <script src="vendor/couchapp/md5.js"></script>
+  <script src="vendor/couchapp/jquery.couchForm.js"></script>
+  <script src="vendor/couchapp/jquery.mustache.js"></script>
+
+  <script id="recent-messages" type="text/x-mustache" charset="utf-8">
+        <ul id="items">
+          {{#items}}
+            <li {{#check}}class="checked"{{/check}} id="{{id}}">
+              <p> <input type = "checkbox" {{#check}}checked{{/check}}>{{text}}</p>
+              <div style="clear:left;"></div>
+            </li>
+          {{/items}}
+        </ul>
+        <p><em>Protip:</em> If you setup continuous replication between this database and a remote one, this list will reflect remote changes in near real-time.</p>
+        <p>This would be a good place to add pagination.</p>
+  </script>
+  <script src="script/app.js"></script>
+</html>

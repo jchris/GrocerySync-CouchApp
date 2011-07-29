@@ -1,0 +1,92 @@
+/* add styles here */
+
+body {
+  font:1em Helvetica, sans-serif;
+  background: #EEEDE7;
+}
+
+h1 {
+  margin-top:0;
+}
+
+#site_header {
+  color: #940303;
+  font-size: 350%;
+  margin-bottom: 0.2em;
+}
+#site_header img {
+  border:1px solid white;
+  margin: 0.2em 0.5em;
+  vertical-align: middle;
+}
+
+#account {
+  float:right;
+}
+
+#profile {
+  border:4px solid #edd;
+  background:#fee;
+  padding:8px;
+  margin-bottom:8px;
+}
+
+#content {
+  padding:8px;
+  width:60%;
+  float:left;
+}
+
+#sidebar {
+  padding:8px;
+  float:right;
+  width:30%;
+}
+
+#items li, #profile {
+    background: none repeat scroll 0 0 #F7F7F7;
+    border: 4px solid #DEDED2;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 1px 1px 5px #333333 inset;
+    margin: 4px 30px;
+    padding: 8px;
+}
+
+#items li.checked {
+  background: none repeat scroll 0 0 #ddd;
+}
+
+form {
+  padding:4px;
+  margin:6px;
+}
+form input {
+  font-size:120%;
+  padding:0.2em;
+}
+
+div.avatar {
+  padding:2px;
+  padding-bottom:0;
+  margin-right:4px;
+  float:left;
+  font-size:0.78em;
+  width : 60px;
+  height : 60px;
+  text-align: center;
+}
+
+div.avatar .name {
+  padding-top:2px;
+}
+
+div.avatar img {
+  margin:0 auto;
+  padding:0;
+  width : 40px;
+  height : 40px;
+}
+
+ul {
+  list-style: none;
+}
