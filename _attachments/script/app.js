@@ -22,7 +22,7 @@ $(function() {
     $("li input").live("click", function(e) {
     	var li = $(this).parents("li")
     	var docid = li.attr("id");
-        li.toggleClass("checked")
+        li.toggleClass("checked");
     	db.openDoc(docid, {success : function(doc) {
 		    doc.check = e.currentTarget.checked
 		    db.saveDoc(doc)
@@ -38,21 +38,16 @@ $(function() {
             changeHandler.onChange(drawItems);
         }
     }
-    $("#account").couchLogin({
-        loggedIn : function(r) {
-            $("#pleaselogin").remove();
-            $("#create-message").couchForm({
-                beforeSave : function(doc) {
-                    doc._id = $("li:first")[0].id+Math.random();
-                    doc.created_at = new Date();
-                    doc.check = false;                       
-                    return doc;
-                }
-            });
-            $("#create-message").find("input").focus();
-        },
-        loggedOut : function() {
-            $("#profile").append('<p id="pleaselogin">Please log in to create items.</p>');
+    
+    $("#create-message").couchForm({
+        beforeSave : function(doc) {
+            var top = $("li:first")[0];
+            var newid = top ? top.id : '3';
+            doc._id = newid.substr(0,40) + Math.random();
+            doc.created_at = new Date();
+            doc.check = false;                       
+            return doc;
         }
     });
+    $("#create-message").find("input").focus();
  });
